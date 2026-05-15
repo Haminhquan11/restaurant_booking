@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Sửa món</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<label>Tên:</label>
+<input name="name" value="{{item.name}}">
+
+<label>Giá:</label>
+<input name="price" value="{{item.price}}">
+
+<label>Mô tả:</label>
+<input name="description" value="{{item.description}}">
+
+{% if item.image %}
+<img src="{{ url_for('static', filename='uploads/' + item.image) }}" width="120">
+{% endif %}
+
+<label>Đổi ảnh:</label>
+<input type="file" name="image">
+
+<button>Cập nhật</button>
+    <a href="/admin/menu">Trở về</a>
+
+</form>
+
+{% endblock %}

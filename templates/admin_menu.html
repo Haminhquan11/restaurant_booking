@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Quản lý menu</h2>
+
+<a href="/admin/menu/add">+ Thêm món</a>
+
+<div class="menu-container">
+{% for item in items %}
+<div class="menu-item">
+    <img src="{{ url_for('static', filename='uploads/' + item.image) }}">
+    <h3>{{item.name}}</h3>
+    <p class="description">{{item.description}}</p>
+    <p class="price">{{item.price}}.000 VNĐ</p>
+    <a href="/admin/menu/edit/{{item.id}}">Sửa</a>
+    <a href="/admin/menu/delete/{{item.id}}">Xóa</a>
+</div>
+{% endfor %}
+</div>
+
+<div class="dashboard-links">
+    <a href="/admin">Trang admin</a>
+</div>
+
+{% endblock %}

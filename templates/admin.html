@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="dashboard-links">
+
+    <a href="/admin/menu">Quản lý menu</a>
+    <a href="/logout">Đăng xuất</a>
+    <form method="GET" class="filter-form">
+    <input type="date" name="date" value="{{selected_date}}">
+    <button type="submit">Lọc</button>
+    <a href="/admin">Xem tất cả</a>
+</form>
+</div>
+<h2>Danh sách đặt bàn</h2>
+
+<table>
+<tr>
+<th>Tên</th>
+<th>SĐT</th>
+<th>Số người</th>
+<th>Bàn</th>
+<th>Ngày</th>
+<th>Giờ</th>
+<th>Trạng thái</th>
+<th>Action</th>
+</tr>
+
+{% for r in reservations %}
+<tr>
+<td>{{r.name}}</td>
+<td>{{r.phone}}</td>
+<td>{{r.guests}}</td>
+<td>{{r.table_number}}</td>
+<td>{{r.date}}</td>
+<td>{{r.time}}</td>
+<td>{{r.status}}</td>
+
+<td class="action-cell">
+<form method="GET" action="/admin/action/{{r.id}}">
+    <select name="action" onchange="
+if(this.value=='delete'){
+    if(!confirm('Bạn có chắc muốn xóa không?')){
+        this.value='';
+        return;
+    }
+}
+this.form.submit();
+">
+        <option value="">Chọn</option>
+        <option value="confirm">Xác nhận</option>
+        <option value="reject">Từ chối</option>
+        <option value="delete">Xóa</option>
+    </select>
+</form>
+</td>
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

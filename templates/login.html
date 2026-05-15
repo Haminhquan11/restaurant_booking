@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="login-wrapper">
+
+    <form method="POST">
+        <h2>Đăng nhập</h2>
+
+        <label>Username:</label>
+        <input name="username">
+
+        <label>Password:</label>
+        <input type="password" name="password">
+
+        <button>Login</button>
+
+        <p><a href="/forgot">Quên mật khẩu?</a></p>
+    </form>
+
+</div>
+
+{% endblock %}

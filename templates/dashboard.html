@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+
+<div class="dashboard">
+
+    <div class="card">
+        <h3>Tổng đặt bàn</h3>
+        <p>{{ total_reservations }}</p>
+    </div>
+
+    <div class="card">
+        <h3>Tổng món ăn</h3>
+        <p>{{ total_menu }}</p>
+    </div>
+
+</div>
+
+<div class="dashboard-links">
+    <a href="/admin/reservations">Quản lý đặt bàn</a>
+    <a href="/admin/menu">Quản lý menu</a>
+    <a href="/logout">Đăng xuất</a>
+</div>
+
+{% endblock %}
