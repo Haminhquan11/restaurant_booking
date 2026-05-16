@@ -172,12 +172,10 @@ a{
     align-items:center;
 }
 
-/* FORM nhỏ lại */
 .reservation-wrapper form{
     flex:1;
 }
 
-/* ẢNH to hơn */
 .reservation-image{
     flex:1.5;
 }
@@ -188,7 +186,6 @@ a{
     object-fit:cover;
     border-radius:20px;
 }
-/* LOGIN CENTER */
 .login-wrapper{
     display:flex;
     justify-content:center;
@@ -246,18 +243,15 @@ select{
     cursor:pointer;
 }
 
-/* làm ô action gọn lại */
 .action-cell{
     padding:5px !important;
     width:120px;
 }
 
-/* form không chiếm full */
 .action-cell form{
     margin:0;
 }
 
-/* dropdown nhỏ gọn */
 .action-cell select{
     width:100%;
     padding:5px;
@@ -298,7 +292,6 @@ select{
     border:none;
     border-radius:5px;
 }
-
 
 body {
     margin: 0;
