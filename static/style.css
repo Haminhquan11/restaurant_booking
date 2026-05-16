@@ -6,12 +6,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* BODY */
 body{
     background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
 }
 
-/* HEADER */
 header{
     background: #2c3e50;
     color:white;
@@ -38,12 +36,10 @@ nav a:hover{
     background:#3498db;
 }
 
-/* CONTAINER */
 .container{
     padding:30px;
 }
 
-/* FORM */
 form{
     background:white;
     padding:25px;
@@ -72,7 +68,6 @@ form input:focus{
     outline:none;
 }
 
-/* BUTTON */
 button{
     background:#3498db;
     color:white;
@@ -89,7 +84,6 @@ button:hover{
     background:#2980b9;
 }
 
-/* TABLE */
 table{
     width:100%;
     margin-top:20px;
@@ -113,7 +107,6 @@ tr:nth-child(even){
     background:#f9f9f9;
 }
 
-/* MENU */
 .menu-container{
     display:flex;
     gap:10px;
@@ -146,7 +139,6 @@ tr:nth-child(even){
     margin-top:5px;
 }
 
-/* FLASH */
 .flash{
     background:#2ecc71;
     color:white;
@@ -156,16 +148,14 @@ tr:nth-child(even){
     text-align:center;
 }
 
-/* TITLE */
 h2{
     margin-bottom:15px;
 }
 
-/* LINK */
 a{
     color:#3498db;
 }
-/* RESERVATION LAYOUT */
+
 .reservation-wrapper{
     display:flex;
     gap:40px;
