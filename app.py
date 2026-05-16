@@ -13,7 +13,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysecret123'
 app.config['SECURITY_PASSWORD_SALT'] = 'mysalt'
 
-# 👉 Nếu chạy test thì dùng SQLite
+
 if os.environ.get('TESTING'):
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
 else:
@@ -125,7 +125,7 @@ def reset_password(token):
     return render_template('reset.html')
 
 # ================= RESERVATION =================
-from datetime import datetime, date  # 👉 nhớ import
+from datetime import datetime, date  
 
 @app.route('/reserve', methods=['GET', 'POST'])
 def reserve():
@@ -150,7 +150,7 @@ def reserve():
             flash("Chỉ nhận 1-10 người")
             return redirect('/reserve')
 
-        table_number = int(request.form['table_number'])  # 👉 THÊM
+        table_number = int(request.form['table_number'])  
 
         exists = Reservation.query.filter_by(
             date=request.form['date'],
@@ -271,7 +271,7 @@ def add_menu():
 
         db.session.add(m)
         db.session.commit()
-        flash("Thêm món thành công")  # ✅ THÊM DÒNG NÀY
+        flash("Thêm món thành công")  
         return redirect('/admin/menu')
 
     return render_template('add_menu.html')
@@ -290,7 +290,6 @@ def edit_menu(id):
         item.description = request.form['description']
         file = request.files.get('image')
 
-        # nếu có upload ảnh mới thì cập nhật
         if file and file.filename != "":
             import os, uuid
             filename = str(uuid.uuid4()) + "_" + file.filename
@@ -299,7 +298,7 @@ def edit_menu(id):
             item.image = filename
 
         db.session.commit()
-        flash("Cập nhật thành công")  # ✅ THÊM
+        flash("Cập nhật thành công")  
         return redirect('/admin/menu')
 
     return render_template('edit_menu.html', item=item)
@@ -312,7 +311,7 @@ def delete_menu(id):
 
     db.session.delete(Menu.query.get(id))
     db.session.commit()
-    flash("Xoá thành công")  # ✅ THÊM
+    flash("Xoá thành công")  
     return redirect('/admin/menu')
 
 # ================= RUN =================
